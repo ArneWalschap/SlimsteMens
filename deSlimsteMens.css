@@ -14,7 +14,6 @@ body {
 	background-attachment: fixed;
 	/*background: #c00000;*/
 	min-height: 100%;
-
 }
 
 #wrapper1 {
@@ -130,7 +129,13 @@ body {
 	width: 253px;
 	height: 100px;
 	background: inherit;
+	border: 2px solid white;
+	border-radius: 20px;
 	/*background: #f84f43;*/
+}
+
+#headercounter:hover{
+	border: 2px solid green;
 }
 
 #teams {
