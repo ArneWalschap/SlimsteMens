@@ -17,7 +17,7 @@ var tn2;
 var tn3;
 var subansweridx;
 var nextQuestionAllowed;
-var triggerForNextQuestion;
+var triggerForNieuweRonde;
 
 function load_current(){
 	document.getElementById("wrapper1").style.display = 'block';
@@ -26,7 +26,7 @@ function load_current(){
 	tn1 = "1";
 	tn2 = "2";
 	tn3 = "3";
-	admintools = false;ee
+	admintools = false;
 	//tn1 = prompt("Geef een naam op voor het eerste team!");
 	//tn2 = prompt("Geef een naam op voor het tweede team!");
 	//tn3 = prompt("Geef een naam op voor het derde team!");
@@ -45,6 +45,7 @@ function start(){
 	rondes[3] = "Einde!";
 	rondeidx = 0;
 	triggerForNextQuestion = false;
+	triggerForNieuweRonde = false;
 	vragen = [[],[],[],[]];
 	vragen[0][0] = "1. Waarvoor staat de eerste 'L' in UCLL?";
 	vragen[0][1] = "2. Waarvan is TI de afkorting?";
@@ -140,6 +141,7 @@ function start(){
 	document.getElementById("tnC").innerHTML = tn3;
 	document.getElementById("vraag").innerHTML = vragen[rondeidx][vraagidx];
 	document.getElementById("antwoordsuggestie").innerHTML = blurAntwoord(antwoorden[rondeidx][vraagidx]);
+	disableButton("volgendevraagbutton");
 	nieuweronde();
 }
 
@@ -177,6 +179,32 @@ function initializeClock() {
 function juist() {
 	if(updateScore()){
 		showantwoord();
+		//ga naar het volgende team (in de eerste ronde) wanneer er punten zijn verdiend.
+		if(scores[rondeidx][vraagidx] == 10){
+			if(currentteam == 1){
+				document.getElementById("team1").classList.remove('current');
+				document.getElementById("team1").classList.add('notcurrent');
+				document.getElementById("team2").classList.remove('notcurrent');
+				document.getElementById("team2").classList.add('current');
+				document.getElementById("transparantimaget1").style.display = 'none';
+				document.getElementById("transparantimaget2").style.display = 'block';
+			} else if(currentteam == 2){
+				document.getElementById("team2").classList.remove('current');
+				document.getElementById("team2").classList.add('notcurrent');
+				document.getElementById("team3").classList.remove('notcurrent');
+				document.getElementById("team3").classList.add('current');
+				document.getElementById("transparantimaget2").style.display = 'none';
+				document.getElementById("transparantimaget3").style.display = 'block';
+			} else {
+				document.getElementById("team3").classList.remove('current');
+				document.getElementById("team3").classList.add('notcurrent');
+				document.getElementById("team1").classList.remove('notcurrent');
+				document.getElementById("team1").classList.add('current');
+				document.getElementById("transparantimaget3").style.display = 'none';
+				document.getElementById("transparantimaget1").style.display = 'block';
+			}
+			currentteam = (currentteam + 1)%3;
+		}
 	}
 }
 
@@ -190,8 +218,8 @@ function showantwoord(){
 		t = t-1000;
 		if (t <= 0) {
 			clearInterval(timeinterval);
-			secondsSpan.innerHTML = "VOLGENDE";
-			nextQuestionAllowed = true;
+			secondsSpan.innerHTML = "0";
+			enableButton("volgendevraagbutton");
 			checkNextQuestion();
 		} else {
 			secondsSpan.innerHTML = t/1000;
@@ -202,7 +230,7 @@ function showantwoord(){
 
 function checkNextQuestion() {
 	if(!triggerForNextQuestion){
-		setTimeout(checkNextQuestion,1000)
+		setTimeout(checkNextQuestion,100)
 	}
 	else {
 		triggerForNextQuestion = false;
@@ -211,10 +239,18 @@ function checkNextQuestion() {
 }
 
 function setTriggerForNextQuestion(){
-	if(nextQuestionAllowed){
 		triggerForNextQuestion = true;
-		nextQuestionAllowed = false;
-	}
+		disableButton("volgendevraagbutton");
+}
+
+function enableButton(button){
+	document.getElementById(button).disabled = false;
+	document.getElementById(button).classList.remove("disabledbutton");
+}
+
+function disableButton(button){
+	document.getElementById(button).disabled = true;
+	document.getElementById(button).classList.add("disabledbutton")
 }
 
 function fout() {
@@ -346,6 +382,7 @@ function nextQuestion(){
 		rondeidx ++;
 		vraagidx = 0;
 		subansweridx = 0;
+		alert("Leg de volgende ronde uit. Klik op OK om de ronde te starten");
 		nieuweronde();
 	}
 	document.getElementById("vraag").innerHTML = vragen[rondeidx][vraagidx];
@@ -365,7 +402,13 @@ function nieuweronde(){
 		document.getElementById("team3").classList.add('notcurrent');
 		document.getElementById("vraag").innerHTML = vragen[3][0];
 		document.getElementById("antwoordsuggestie").style.display = 'none';
+		document.getElementById("wrapper3").style.display ='none';
+		document.getElementById("admintools").style.display = 'none';
 	}
+	startnieuweronde();
+}
+
+function startnieuweronde(){
 	document.getElementById("ronde").innerHTML = rondes[rondeidx];
 	vooruitgangstekst = "";
 	if(vragen[rondeidx].length > 1){
@@ -405,8 +448,10 @@ function playNextTeamSound(){
 }
 
 function adminEndGame() {
-	rondeidx = rondes.length-1;
-	nieuweronde();
+	if(confirm("Ben je zeker dat je het spel wil beëindigen? Er is geen weg terug...")){
+		rondeidx = rondes.length-1;
+		nieuweronde();
+	}
 }
 
 function toggleAdminTools() {
@@ -419,3 +464,43 @@ function toggleAdminTools() {
 		admintools = true;
 	}
 }
+
+function setTeamScore(team) {
+	scoreValue = parseInt(document.getElementById("manualscorevalue").value);
+	if(scoreValue != 0){
+		if (team == 1){
+			score1 = scoreValue;
+			document.getElementById("scoreA").innerHTML = score1;
+		}
+		if (team == 2){
+			score2 = scoreValue;
+			document.getElementById("scoreB").innerHTML = score2;
+		}
+		if (team == 3){
+			score3 = scoreValue;
+			document.getElementById("scoreC").innerHTML = score3;
+		}
+	}
+}
+
+function manualVolgendeRonde(){
+	if(confirm("Ben je zeker dat je wil overgaan naar de volgende ronde? Er is geen weg terug...")){
+		rondeidx ++;
+		vraagidx = 0;
+		subansweridx = 0;
+		nieuweronde();
+		document.getElementById("vraag").innerHTML = vragen[rondeidx][vraagidx];
+		document.getElementById("antwoordsuggestie").innerHTML = blurAntwoord(antwoorden[rondeidx][vraagidx]);
+		document.getElementById("q"+(vraagidx+1)).classList.add('currentquestion');
+		initializeClock();
+	}
+}
+
+function pause(){
+	alert("Spel gepauzeerd. Druk op OK om te hervatten");
+}
+
+/*function testText(){
+	element = document.getElementById("manualscorevalue");
+	if(element.value != 0) document.getElementById("testText").innerHTML = element.value;
+}*/

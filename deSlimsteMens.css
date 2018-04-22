@@ -17,12 +17,6 @@ body {
 
 }
 
-#buttondivider {
-	position: relative;
-	height: 50px;
-	width: 100px;
-}
-
 #wrapper1 {
 	position: relative;
 	/*border-left: 1px solid #ddd;
@@ -135,7 +129,8 @@ body {
 	float: right;
 	width: 253px;
 	height: 100px;
-	background: #f84f43;
+	background: inherit;
+	/*background: #f84f43;*/
 }
 
 #teams {
@@ -165,7 +160,6 @@ body {
 	position: relative;
 	height: 200px;
 	width: 350px;
-
 }
 
 #space1 {
@@ -225,61 +219,66 @@ body {
 }
 
 .togglebutton {
-	background-color: #B40404; /* dark red */
+	background-color: #7c0000; /* dark red */
 	border: none;
-	margin-right: 30px;
+	margin-right: 20px;
 	color: white;
 	padding: 8px 16px;
-	position: absolute;
+	position: relative;
+	width: 140px;
 	right: 0px;
 	border-radius: 4px;
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
-	font-size: 16px;
+	font-size: 12px;
 }
 
 .togglebutton:hover {
-	background-color: #fc6969;
+	/*background-color: #fc6969;*/
+	opacity: 0.7;
 }
 
-.correctbutton {
+.bigbutton {
 	border-radius: 4px;
-	background-color: #4d681b; /* dark red */
 	border: none;
-	position: absolute;
-	left: 375px;
+	position: relative;
 	color: white;
-	width: 200px;
+	width: 300px;
 	height: 80px;
 	text-align: center;
 	text-decoration: none;
-	opacity: 0.9;
-	transition: 0.1s;
-	display: inline-block;
-	font-size: 24px;
-}
-
-.correctbutton:hover {
 	opacity: 1;
-}
-
-.incorrectbutton {
-	border-radius: 4px;
-	background-color: #bc1635; /* dark red */
-	border: none;
-	position: absolute;
-	right: 375px;
-	width: 200px;
-	height: 80px;
-	color: white;
-	text-align: center;
-	text-decoration: none;
-	opacity: 0.9;
 	transition: 0.1s;
-	margin-right: 10px;
 	display: inline-block;
 	font-size: 24px;
+}
+
+.bigbutton:hover {
+	opacity: 0.8;
+}
+
+.togglebutton.adminbutton {
+	font-size: 16px;
+	width: 300px;
+	margin-right: 0px;
+}
+
+.disabledbutton {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.bigbutton.correct {
+	background-color: #4d681b
+}
+
+.bigbutton.incorrect {
+	background-color: #d11010; /* dark red */
+}
+
+.bigbutton.tool {
+	background-color: #E05C24;
 }
 
 .incorrectbutton:hover{
@@ -289,6 +288,10 @@ body {
 .blur {
    color: transparent;
    text-shadow: 0 0 3px #ffc000;
+}
+
+.label{
+	 color: white;
 }
 
 #vooruitgang {

@@ -30,8 +30,19 @@ De volgende vraag duidt dan het correcte team aan voor de volgende vraag (afhank
 
 - Misschien is een quizmaster-handleiding (voor wie de quiz niet kent) handig
 
+TODO:
+
+- Tussenpagina tussen de rondes
+- NaN error fixen
+- button om terug te gaan naar vorige vraag
 
 DONE:
+
+- Score manueel aanpassen (timer moet pauzeren)
+- audio switch teams
+- button om naar volgende vraag te gaan
+- button om naar volgende ronde te gaan
+- pause button
 
 DONE- Drie seconden om het antwoord te laten zien is te kort; beter is dat de begeleider klikt om naar de volgende vraag te gaan.
   De tijd is al door eer ze doorhebben dat het antwoord geprojecteerd wordt, en soms duurt de uitleg bij een antwoord wat langer

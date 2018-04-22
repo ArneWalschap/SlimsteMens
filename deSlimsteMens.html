@@ -34,10 +34,10 @@
 				<h1 id="scoreC" class="titletextY">60</h1><h2 class="titletextZ">TEAM <span id="tnC">A</span></h2>
 				<img id="transparantimaget3" usemap="#juistfoutmap" src="images/JuistFoutkleur.PNG">
 			</div>
-			<map name="juistfoutmap">
-			  <area shape="rect" coords="0,100,150,200" href="javascript:void(0);" onclick="juist()">
-			  <area shape="rect" coords="160,100,300,200" href="javascript:void(0);" onclick="fout()">
-			</map>
+			<!--<map name="juistfoutmap">
+			  <area shape="rect" coords="0,100,150,200" href="javascript:void(0);" onclick="">
+			  <area shape="rect" coords="160,100,300,200" href="javascript:void(0);" onclick="">
+			</map>-->
 		</div>
 		<div id="vraagEnAntwoord">
 			<div><h1 class="titletext" id="vraag"></h1></div>
@@ -51,16 +51,20 @@
 	</div>
 	<div id="wrapper4"></div>
 	<div id="wrapper3">
-		<button type="button" class="correctbutton" onclick="juist()">Juist</button>
-		<button type="button" class="incorrectbutton" onclick="fout()">Fout</button>
-		<button type="button" class="togglebutton" onclick="toggleAdminTools()">Beheer spel</button>
+		<button type="button" class="togglebutton adminbutton" onclick="toggleAdminTools()">Beheer spel</button>
+		<button type="button" class="bigbutton correct" onclick="juist()">Juist</button>
+		<button type="button" class="bigbutton incorrect" onclick="fout()">Fout</button>
+		<button id="volgendevraagbutton" type="button" class="bigbutton tool" onclick="setTriggerForNextQuestion()">Volgende Vraag</button>
 	</div>
 	<div id="admintools">
-		<button type="button" class="togglebutton" onclick="alert('Hello world!')">Beheer spel</button>
-		<button type="button" class="togglebutton" onclick="alert('Hello world!')">Beheer spel</button>
-		<button type="button" class="togglebutton" onclick="alert('Hello world!')">Beheer spel</button>
-		<button type="button" class="togglebutton" onclick="alert('Hello world!')">Beheer spel</button>
+		<button type="button" class="togglebutton" onclick="manualVolgendeRonde()">Volgende Ronde</button>
 		<button type="button" class="togglebutton" onclick="adminEndGame()">Beeindig spel</button>
+		<label class="label" for="manualscorevalue">Pas een score manueel aan: </label>
+		<input id="manualscorevalue" type="number">
+		<button id="testText" type="button" class="togglebutton" onclick="setTeamScore(1)">Set Team 1</button>
+		<button type="button" class="togglebutton" onclick="setTeamScore(2)">Set Team 2</button>
+		<button type="button" class="togglebutton" onclick="setTeamScore(3)">Set Team 3</button>
+		<button type="button" class="togglebutton" onclick="pause()">Pauzeer spel</button>
 	</div>
 	<audio id="play" src="audio/notification.mp3"></audio>
 	<audio id="nextTeamSound" src="audio/nextteam.mp3"></audio>
