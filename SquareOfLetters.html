@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+ <head>
+  <title>
+     "SquareOfLetters"
+  </title>
+  Opgave:
+  <ul>
+  <li id="p1"> <button onclick="demo()">DEMO!</button> </li>
+  <li> maak een vierkant dat uit N schillen van letters bestaat </li>
+	<ol>
+	<li> bereken eerst hoeveel van elke letter je nodig hebt </li> 
+	<li> bundel al deze letters in een rij van rijen van dezelfde letters </li>
+	<li> doe dit iteratief EN recursief </li>
+	<li> zorg voor een deftige to-string methode, zodat iedere nieuwe rij van letters netjes onder de andere geschreven wordt </li>
+	<li> schrijf nu naar html ipv naar een confirm venster </li>
+		<b>TIP:</b> document.write(s); <br>
+		<b>TIP:</b> "\n" werkt niet in html, gebruik "< br >"
+	<li> zorg ervoor dat je een lettertype kiest waarvoor alle letters even breed zijn (bijv. courier) </li>
+		<b>TIP:</b> in je body kan je je script vervatten tussen < p id="scriptje" > en </ p ><br>
+		<b>TIP:</b> document.getElementById("scriptje").style.font="..";		
+	<li> zorg ervoor dat iedere letter een andere kleur heeft, dit moet nu resulteren in een piramide van letters die per laag een andere kleur heeft </li>
+		<b>TIP:</b> kleur is een eigenschap van een String.... s = "leentje"; s = s.fontcolor("red"); 
+	<li> als laatste en moeilijkste uitdaging - maak een tosquare methode, die een string terug geeft die bij het printen
+	   je letters in een vierkant toont. Gebruik voor het maken van deze grote string alle letters uit je oorspronkelijk
+	   berekende rij van rijen. Als je er eentje gebruikt pop je die uit je oorspronkelijke rij! </li>
+		<b>TIP:</b> eerst analyseren, tellen en rekenen
+	</ol>		
+	</ul>
+
+  
+  <script>
+	function demo()
+	{
+		var n = parseInt(prompt("Hoeveel lagen wil je in je vierkant?"));
+		docwrite("Na iteratieve berekening ziet je vierkant er zo uit: <br><br>" + printLetterSquare(createLettersForSquareI(n)),"it");	
+		docwrite("Na recursieve berekening ziet je vierkant er zo uit: <br><br>" + printLetterSquare(createLettersForSquareR(n)),"rec");
+	}
+	
+	
+	var letterrij = new Array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
+	var kleurenrij = new Array("red","orange","yellow","green","blue","magenta","violet");
+	
+	function createLettersForSquareI(n)
+	{
+		var lettersquare = new Array(n);
+		if(n > 0)
+		{
+			lettersquare[0] = [letterrij[0]];
+			lettersquare[0][0] = lettersquare[0][0].fontcolor(kleurenrij[0%7]);
+			for(var idx = 1; idx < n; idx ++)
+			{
+				lettersquare[idx] = new Array(idx*8);
+				for(var jdx = 0; jdx < idx*8; jdx++)
+				{
+					lettersquare[idx][jdx] = letterrij[idx%26];
+					lettersquare[idx][jdx] = lettersquare[idx][jdx].fontcolor(kleurenrij[idx%7]);
+				}
+			}
+		}	
+		return lettersquare;
+	}
+	
+	function createLettersForSquareR(n)
+	{
+		var lettersquare;
+		if(n == 1)
+		{
+			lettersquare = new Array();
+			var rij = new Array(1);
+			rij[0] = letterrij[0];
+			rij[0] = rij[0].fontcolor(kleurenrij[0]);
+		}
+		else
+		{
+			lettersquare = createLettersForSquareR(n-1);
+			var rij = new Array((n-1)*8);
+			for(var idx = 0; idx < (n-1)*8; idx++)
+			{
+				rij[idx] = letterrij[(n-1)%26];
+				rij[idx] = rij[idx].fontcolor(kleurenrij[(n-1)%7]);
+			}
+		}
+		lettersquare.push(rij);
+		return lettersquare;
+	}
+	
+	function printLetterSquare(array)
+	{
+		var square = "";		
+		for(var idx = 0; idx < array.length; idx++)
+		{
+			var line = array[idx] + "<br>";			
+			square += line;
+		}		
+		square += "<br><br>";
+		
+		var n = array.length;
+		var zijdel = n*2 - 1;
+		for(var z = 0; z < zijdel; z++)
+		{
+			var lijn = "";
+			var li = Math.abs(z-(n-1));
+			var am = 2*li+1;
+			var ae = (zijdel - am)/2;
+			for(var i = 0; i < ae; i++)
+			{
+				lijn += array[n-1-i].pop() + " ";
+			}
+			for(var j = 0; j < am; j++)
+			{
+				lijn += array[li].pop() + " ";
+			}			
+			for(var k = ae-1; k >=0; k--)
+			{
+				lijn += array[n-1-k].pop() + " ";
+			}
+			lijn += "<br>";
+			square += lijn;	
+		}	
+		
+		square += "<br><br>";
+		
+		return square;
+	}
+	
+	function docwrite(s,id)
+	{
+		document.write("<p id=" + id + ">");
+		document.getElementById(id).style.font="bold 20px courier,serif";
+		document.write(s);
+		document.write("</p>");
+	}
+	
+  </script>
+ </head>
+ 
+
+</html>

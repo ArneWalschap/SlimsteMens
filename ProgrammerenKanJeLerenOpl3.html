@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+	<head>
+		<title>"Programmeren kan je leren"</title>
+		Opgave:
+		<ul id="myList">
+			<li id="p1"> <button onclick="demo()">DEMO!</button> </li>
+			<li> Deze code maakt een vierkant met van binnen naar buiten het door jou opgegeven aantal letters uit het alfabet, 
+			     aan jou om wat aanpassingen te doen: SUCCES! </li>
+			<ol>
+				<li> Zorg ervoor dat je een vierkant kan maken met meer dan 3 verschillende letters </li> 
+						<!-- op lijn 47 letters toevoegen aan de array -->
+				<li> Zorg ervoor dat je vierkant van binnen naar buiten de kleuren van de regenboog heeft </li>
+						<!-- op lijn 51 letters toevoegen aan de array -->
+				<li> Maak een vierkant met de letters van je naam ipv met de letters van het alfabet </li>
+						<!-- op lijn 47 de letters in de array wijzigen in de letters van je eigen naam -->
+				<li> Zorg er nu voor dat de gebruiker zelf zijn naam kan opgeven </li>
+					<b>TIP:</b> vraag eerst het aantal letters in de naam <br>
+					<b>TIP:</b> vraag vervolgens met een for lus iedere letter (for i=0; i < aantalletters, i++)... <br>
+				<li> Kan je de code aanpassen zodat je een piramide maakt ipv een vierkant? (iedere laag 2 letters meer)
+			</ol>	
+		</ul>
+  
+
+  
+  <script>
+	function demo()
+	{
+		// We vragen eerst het aantal letters
+		var n = parseInt(prompt("Hoeveel lagen wil je in je vierkant?"));
+		
+		// We berekenen de letters die we nodig hebben
+		var letters = createLettersForSquare(n);
+		
+		// Even ter controle printen
+		var lettersInTekst = createStringFromLetters(letters);
+		docwrite("Controle van de letters: <br><br>" + lettersInTekst,"controle");
+		
+		// We maken van deze letters nu een vierkant (een nieuwe lijn starten doen we met <br>)
+		var vierkant = createSquareOfLetters(letters);
+		
+		// We printen het resultaat op het scherm
+		docwrite("Na berekening ziet je vierkant er zo uit: <br><br>" + vierkant,"resultaat");	
+		docwrite("Ga terug om opnieuw te beginnen!" ,"instructie");	
+	}
+	
+	// de letters van het alfabet
+	var letterrij = new Array("L","E","E","N","T","J","E");
+	
+	// de kleuren die we gaan gebruiken
+	// andere kleuren in javascript? https://www.w3schools.com/tags/ref_colornames.asp
+	var kleurenrij = new Array("red","orange","yellow","green","blue","magenta","violet");
+	
+	// de functie om de juiste letters in de juiste kleur klaar te zetten 
+	// vierkant met 1 laag
+	//      A
+	// vierkant met 2 lagen
+	//		A
+	//		B B B B B B B B
+	// vierkant met 3 lagen
+	//		A
+	//		B B B B B B B B
+	// 		C C C C C C C C C C C C C C C C
+	// hoeveel letters per laag? (TIP: de eerste laag, de middelste letter, is een specialleke, een uitzondering) 
+	function createLettersForSquare(n)
+	{
+		var lettersquare = new Array(n);
+		if(n > 0)
+		{
+			lettersquare[0] = [letterrij[0]];
+			lettersquare[0][0] = lettersquare[0][0].fontcolor(kleurenrij[0%kleurenrij.length]);
+			for(var idx = 1; idx < n; idx ++)
+			{
+				lettersquare[idx] = new Array(idx*8);
+				for(var jdx = 0; jdx < idx*8; jdx++)
+				{
+					lettersquare[idx][jdx] = letterrij[idx%letterrij.length];
+					lettersquare[idx][jdx] = lettersquare[idx][jdx].fontcolor(kleurenrij[idx%kleurenrij.length]);
+				}
+			}
+		}	
+		return lettersquare;
+	}
+	
+	function createStringFromLetters(letters)
+	{
+		// eerst schrijven we, als controle, even de letters op het scherm zoals ze gemaakt werden door
+		// de functie createLettersForSquare, nog niet in een vierkant dus
+		var controle = "";		
+		for(var idx = 0; idx < letters.length; idx++)
+		{
+			var line = letters[idx] + "<br>";			
+			controle += line;
+		}		
+		return controle;
+	}
+	
+	// de functie om de letters in een vierkant/matrix te zetten
+	// vierkant met 1 laag
+	//      A
+	// vierkant met 2 lagen
+	//		B B B
+	//      B A B
+	//		B B B
+	// vierkant met 3 lagen
+	//      C C C C C
+	//      C B B B C
+	//      C B A B C
+	//		C B B B C
+	//		C C C C C
+	function createSquareOfLetters(letters)
+	{		
+		// Vanaf hier maken we het echte vierkant
+		var vierkant = "";	
+		var n = letters.length;
+		var zijdel = n*2 - 1;
+		for(var z = 0; z < zijdel; z++)
+		{
+			var lijn = "";
+			var li = Math.abs(z-(n-1));
+			var am = 2*li+1;
+			var ae = (zijdel - am)/2;
+			for(var i = 0; i < ae; i++)
+			{
+				lijn += letters[n-1-i].pop() + " ";
+			}
+			for(var j = 0; j < am; j++)
+			{
+				lijn += letters[li].pop() + " ";
+			}			
+			for(var k = ae-1; k >=0; k--)
+			{
+				lijn += letters[n-1-k].pop() + " ";
+			}
+			lijn += "<br>";
+			vierkant += lijn;	
+		}	
+		
+		return vierkant;
+	}
+	
+	// de functie om het resultaat op het scherm te schrijven!
+	function docwrite(s,id)
+	{
+		document.write("<p id=" + id + ">");
+		document.getElementById(id).style.font="bold 20px courier,serif";
+		document.write(s);
+		document.write("</p>");		
+	}
+	
+  </script>
+ </head>
+</html>

@@ -1,0 +1,94 @@
+#timer{
+    text-align: center;
+    background: #000;
+  font-family: sans-serif;
+  font-weight: 100;
+}
+
+.timerh1{
+  color: #fff;
+  font-weight: 100;
+  font-size: 20px;
+  margin: 40px 0px 20px;
+}
+
+.timerh2{
+  color: #fff;
+  font-weight: 100;
+  font-size: 15px;
+  margin: 10px 0px 20px;
+}
+
+.timerdeadline{
+  color: #fff;
+  font-weight: 100;
+  font-size: 15px;
+  margin: 10px 0px 20px;
+}
+
+.timerp{
+  color: #fff;
+  font-weight: 100;
+  font-size: 10px;
+  margin: 10px 0px 20px;
+}
+
+#timerclockdiv{
+    font-family: sans-serif;
+    color: #fff;
+    display: inline-block;
+    font-weight: 100;
+    text-align: center;
+    font-size: 15px;
+}
+
+#timerclockdiv > div{
+    padding: 5px;
+    border-radius: 2px;
+    background: #919191;
+    display: inline-block;
+}
+
+#timerclockdiv div > span{
+    padding: 4px;
+    border-radius: 2px;
+    background: #424242;
+    display: inline-block;
+}
+
+#timerinschrijfknop{
+    font-family: sans-serif;
+    color: #fff;
+    display: inline-block;
+    font-weight: 100;
+    text-align: center;
+    font-size: 15px;
+}
+
+#timerinschrijfknop > div{
+    padding: 5px;
+    border-radius: 2px;
+    background: #919191;
+    display: inline-block;
+}
+
+#timerinschrijfknop div > button{
+    padding: 8px;
+    border-radius: 2px;
+    background: #424242;
+    display: inline-block;
+	color: #fff;
+	font-weight: 100;
+    text-align: center;
+    font-size: 15px;
+}
+
+.smalltext{
+    padding-top: 5px;
+    font-size: 8px;
+}
+
+.fieldsetachtig {
+	border: 1px silver solid inset;
+	padding: 10px;
+}

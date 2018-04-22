@@ -1,0 +1,69 @@
+De quiz is relatief goed verlopen en de leerlingen hebben zich wel geamuseerd denk ik.
+Bij verschillende groepjes waren ze heel enthousiast toen ze het logo van de slimste mens zagen wanneer ze binnen kwamen,
+en van één groep zijn er leerlingen op het einde komen zeggen hoe leuk ze het wel vonden. Voor ons als begeleider was het soms wel wat hectisch, maar dat maakte het ook wel fijn.
+
+Het programma heeft goed dienst gedaan (zeker omdat het maar in één of twee dagen in elkaar gebokst is),
+maar er zijn nog wel enkele verbeteringen mogelijk die het makkelijker maken voor de begeleider.
+Ik shrijf ze hieronder uit; het zijn er wel wat, maar het meeste zijn gewoon kleine dingen hoor.
+Maar ik denk dat het toch belangrijk is om ze te noteren (en op te lossen),
+aangezien het eigenlijk een zeer goed idee is om volgende keren weer te doen...
+
+
+- Als er niet op start gedrukt is, mogen de knoppen om een vraag goed of fout te rekenen niet werken. Nu heb ik me twee keer misklikt (i.p.v. op start had ik op een smiley geklikt).
+
+- De vragen in fase twee waar broncode getoond wordt is heel moeilijk leesbaar; code moet groter getoond worden...
+
+- Het team dat als eerste begint heeft ongelofelijk veel voordeel. In 4 van mijn 5 sessies was er één team dat zo goed als alle juiste antwoorden gegeven heeft
+  (ofwel was de vraag te makkelijk en wist elke groep het, ofwel was de vraag te moeilijk en wist niemand het waardoor de beurt aan hetzelfde team blijft).
+  Er zou een systeem moeten zijn om de mogelijkheid tot antwoorden eerlijker te verdelen.
+  Bijvoorbeeld voor het eerste deel van de quiz: wanneer er een vraag op punten beantwoord is gaat de beurt sowieso naar de volgende groep.
+  Voorbeeld voor het tweede deel van de quiz: bij elk van de drie programmeervragen begint een (op voorhand vastgelegd) team, onafhankelijk van wie wat juist raadt.
+
+- Er was ergens een vraag met een typfout is (denk dat er 'vandaa' stond in plaats van 'vandaar').
+
+
+- Je moet als quizmaster het spelverloop kunnen aanpassen. Nu gebeurde het geregeld dat een team het juiste antwoord in de laatste seconde zei,
+maar tegen dat je als spelmeester reageert is de beurt al bij het volgende team. Vanaf daar heb je een groot probleem en gaat alles de mist in.
+Beter is het volgende systeem: de timer wordt enkel gebruikt om aan te geven welk team mag antwoorden.
+Maar onderaan staan 4 knoppen die de spelmeester gebruikt om aan te geven of Team 1, Team 2, Team 3 of niemand de vraag juist heeft geraden.
+De volgende vraag duidt dan het correcte team aan voor de volgende vraag (afhankelijk van wat  de spelmeester aangeklikt heeft en niet kijkend naar de timer).
+
+- Een audiosignaal als er tussen teams gewisseld moet worden zou handig zijn (nu is het allemaal blijkbaar moeilijk te volgen).
+
+- Bij het tweede stuk van het spel (de programmeervragen), waarvoor staat die droevige smiley daar eigenlijk?
+  Is er een voordeel als de studenten passen? Voor hun score maakt het op het eerste zicht niet uit of ze hun tijd opgebruiken of niet.
+
+- Bij vraag 1 van het tweede stuk geven ze vaak "programmeertaal" als antwoord (wat daar niet gezocht wordt); bij de tweede vraag zeggen ze dat niet meer omdat ze denken dat we dat niet zoeken.
+
+
+- Tussen de verschillende stukken zou best een tussenpagina komen waar de quizmaster even uitleg kan geven over de volgende vragen. Dat zorgt ook voor de perfecte locatie om een mopje te maken.
+
+- Soms komt er NaN te staan bij de timer en soms bij de punten van een groep; bij Kristien en Wim is dit gebeurd met studenten erbij, bij mij enkel tijdens het testen op voorhand.
+
+Enkele algemene bedenkingen:
+
+- Misschien is een quizmaster-handleiding (voor wie de quiz niet kent) handig
+
+- Het is zeer hectisch met 1 persoon; 2 personen zal beter gaan denk ik...
+
+- Een teamnaam kiezen is eigenlijk tijdverlies; waarom niet gewoon team 1, 2, 3?
+
+- 15 minuten is te kort; zeker omdat mijn leerlingen van de andere kant van het gebouw kwamen en daardoor zeer veel tijd verloren.
+
+- Een idee voor als er ooit een fotoronde zou bijkomen: "serial killer or programming language inventor" http://www.malevole.com/mv/misc/killerquiz/
+
+- Misschien kunnen we versie 2.0 laten uitwerken als afstudeerwerk volgend jaar? Of als het project voor VGO?
+
+
+DONE:
+
+DONE- Drie seconden om het antwoord te laten zien is te kort; beter is dat de begeleider klikt om naar de volgende vraag te gaan.
+  De tijd is al door eer ze doorhebben dat het antwoord geprojecteerd wordt, en soms duurt de uitleg bij een antwoord wat langer
+  (bijv. de uitleg van wat een grafe is bij de GPS-vraag; niemand wist wat een grafe was).
+
+
+DONE- Een knop toevoegen om de quiz per direct te laten eindigen (bijv. omdat de tijd van de sessie op is). Eventueel ook een eindscherm met de winnaar tonen?
+
+DONE- De streepjes om aan te geven uit hoeveel letters het juiste antwoord bestaat waren niet duidelijk genoeg (lichtgrijs op rood). Meer contrast dus (zwart op rood? Wit op rood?).
+
+DONE- Als de smileys blijven (cfr. een van de vorige opmerkingen), dan zou ik ze rood en groen maken voor de duidelijkheid (ik heb ook een keer of twee misgeklikt).

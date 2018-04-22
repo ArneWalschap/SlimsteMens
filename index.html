@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>"De Slimste Mens"</title>
+		<script src="deSlimsteMens.js"></script>
+		<link rel="stylesheet" href="deSlimsteMens.css" media="screen" />
+	</head>
+	<body onload="load_current()">
+	<div id="wrapper1">
+		<a><img id="logo" src="images/StartFoto.PNG" width=1200 title="DeSlimsteMens" onclick="start();"/></a>
+	</div>
+	<div id="wrapper2">
+		<div id="header">
+			<div id="headerlogo"><img src="images/logo.PNG" height=100 title="DeSlimsteMensLogo"/></div>
+			<div id="headertitle"><h1 class="titletext" id="ronde"></h1></div>
+			<div id="headercounter">
+				<div><h1 class="seconds" id="seconds" href="" onclick="starttime();">START</h1></div>
+			</div>
+		</div>
+		<div id="teams">
+			<div id="team1" class="current" >
+				<h1 id="scoreA" class="titletextY">60</h1><h2 class="titletextZ">TEAM <span id="tnA">A</span></h2> 
+				<img id="transparantimaget1" usemap="#juistfoutmap" src="images/JuistFout.PNG">
+			</div>
+			<div id="space1"> </div>
+			<div id="team2" class="notcurrent">
+				<h1 id="scoreB" class="titletextY">60</h1><h2 class="titletextZ">TEAM <span id="tnB">A</span></h2> 
+				<img id="transparantimaget2" usemap="#juistfoutmap" src="images/JuistFout.PNG">
+			</div>
+			<div id="space2"> </div>
+			<div id="team3" class="notcurrent">
+				<h1 id="scoreC" class="titletextY">60</h1><h2 class="titletextZ">TEAM <span id="tnC">A</span></h2> 
+				<img id="transparantimaget3" usemap="#juistfoutmap" src="images/JuistFout.PNG">
+			</div>		
+			<map name="juistfoutmap">
+			  <area shape="rect" coords="0,100,150,200" href="javascript:void(0);" onclick="juist()">
+			  <area shape="rect" coords="160,100,300,200" href="javascript:void(0);" onclick="fout()">
+			</map>
+		</div>
+		<div id="vraagEnAntwoord">
+			<div><h1 class="titletext" id="vraag"></h1></div>
+			<div><h1 class="titletextY blur" id="antwoordsuggestie"></h1></div>
+		</div> 
+		<div id="vooruitgang">
+			<div id="headertitle">
+				<h1 class="titletext" id="vooruitgangsbalk"></h1>
+			</div>
+		</div>		
+	</div>
+	</body>		
+</html>
