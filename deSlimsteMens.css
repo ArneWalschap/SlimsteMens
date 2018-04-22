@@ -138,10 +138,6 @@ body {
 	background: #f84f43;
 }
 
-#headercounter:hover {
-	background: green;
-}
-
 #teams {
 	position: relative;
 	height: 200px;

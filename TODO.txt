@@ -1,14 +1,3 @@
-De quiz is relatief goed verlopen en de leerlingen hebben zich wel geamuseerd denk ik.
-Bij verschillende groepjes waren ze heel enthousiast toen ze het logo van de slimste mens zagen wanneer ze binnen kwamen,
-en van één groep zijn er leerlingen op het einde komen zeggen hoe leuk ze het wel vonden. Voor ons als begeleider was het soms wel wat hectisch, maar dat maakte het ook wel fijn.
-
-Het programma heeft goed dienst gedaan (zeker omdat het maar in één of twee dagen in elkaar gebokst is),
-maar er zijn nog wel enkele verbeteringen mogelijk die het makkelijker maken voor de begeleider.
-Ik shrijf ze hieronder uit; het zijn er wel wat, maar het meeste zijn gewoon kleine dingen hoor.
-Maar ik denk dat het toch belangrijk is om ze te noteren (en op te lossen),
-aangezien het eigenlijk een zeer goed idee is om volgende keren weer te doen...
-
-
 - Als er niet op start gedrukt is, mogen de knoppen om een vraag goed of fout te rekenen niet werken. Nu heb ik me twee keer misklikt (i.p.v. op start had ik op een smiley geklikt).
 
 - De vragen in fase twee waar broncode getoond wordt is heel moeilijk leesbaar; code moet groter getoond worden...
@@ -20,7 +9,6 @@ aangezien het eigenlijk een zeer goed idee is om volgende keren weer te doen...
   Voorbeeld voor het tweede deel van de quiz: bij elk van de drie programmeervragen begint een (op voorhand vastgelegd) team, onafhankelijk van wie wat juist raadt.
 
 - Er was ergens een vraag met een typfout is (denk dat er 'vandaa' stond in plaats van 'vandaar').
-
 
 - Je moet als quizmaster het spelverloop kunnen aanpassen. Nu gebeurde het geregeld dat een team het juiste antwoord in de laatste seconde zei,
 maar tegen dat je als spelmeester reageert is de beurt al bij het volgende team. Vanaf daar heb je een groot probleem en gaat alles de mist in.
@@ -35,24 +23,12 @@ De volgende vraag duidt dan het correcte team aan voor de volgende vraag (afhank
 
 - Bij vraag 1 van het tweede stuk geven ze vaak "programmeertaal" als antwoord (wat daar niet gezocht wordt); bij de tweede vraag zeggen ze dat niet meer omdat ze denken dat we dat niet zoeken.
 
-
 - Tussen de verschillende stukken zou best een tussenpagina komen waar de quizmaster even uitleg kan geven over de volgende vragen. Dat zorgt ook voor de perfecte locatie om een mopje te maken.
 
 - Soms komt er NaN te staan bij de timer en soms bij de punten van een groep; bij Kristien en Wim is dit gebeurd met studenten erbij, bij mij enkel tijdens het testen op voorhand.
 
-Enkele algemene bedenkingen:
 
 - Misschien is een quizmaster-handleiding (voor wie de quiz niet kent) handig
-
-- Het is zeer hectisch met 1 persoon; 2 personen zal beter gaan denk ik...
-
-- Een teamnaam kiezen is eigenlijk tijdverlies; waarom niet gewoon team 1, 2, 3?
-
-- 15 minuten is te kort; zeker omdat mijn leerlingen van de andere kant van het gebouw kwamen en daardoor zeer veel tijd verloren.
-
-- Een idee voor als er ooit een fotoronde zou bijkomen: "serial killer or programming language inventor" http://www.malevole.com/mv/misc/killerquiz/
-
-- Misschien kunnen we versie 2.0 laten uitwerken als afstudeerwerk volgend jaar? Of als het project voor VGO?
 
 
 DONE:
