@@ -460,6 +460,7 @@ function adminEndGame() {
 	if(confirm("Ben je zeker dat je het spel wil beëindigen? Er is geen weg terug...")){
 		rondeidx = rondes.length-1;
 		nieuweronde();
+		initializeClock();
 	}
 }
 
