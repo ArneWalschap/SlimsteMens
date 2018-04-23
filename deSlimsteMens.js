@@ -86,7 +86,7 @@ function start(){
 	antwoorden [0][11] = "JAVA";
 	antwoorden [1][0] = "Zuckerberg;Facebook;sociale media;film";
 	antwoorden [1][1] = "programmeertaal;oppervlakte cirkel;3.14 of PI;java";
-	antwoorden [1][2] = "Mac;Steve Jobs;duur!;Tim Cook";
+	antwoorden [1][2] = "Apple;Steve Jobs;duur;Tim Cook";
 	antwoorden [2][0] = "hoger onderwijs;Mario;TI";
 	antwoorden [2][1] = "TI;Microsoft;data-opslag";
 	antwoorden [2][2] = "Google;emoticons;computervirus";
