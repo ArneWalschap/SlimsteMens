@@ -214,10 +214,16 @@ function juist() {
 
 //verander het team en zet nrOfteamscurrentQuestion op default
 function changeTeam(team){
-	currentTeamID = ("team" + currentteam.toString());
-	transparentCurrentTeamID = "transparantimaget" + currentteam.toString();
+	if(currentteam == 0){
+		currentteamstring = "3";
+	} else {
+		currentteamstring = currentteam.toString();
+	}
+	currentTeamID = "team" + currentteamstring
+	transparentCurrentTeamID = "transparantimaget" + currentteamstring;
 	setTeamID = "team" + team.toString();
 	transparentSetTeamID = "transparantimaget" + team.toString();
+	alert(currentTeamID);
 	document.getElementById(currentTeamID).classList.remove('current');
 	document.getElementById(currentTeamID).classList.add('notcurrent');
 	document.getElementById(setTeamID).classList.remove('notcurrent');
