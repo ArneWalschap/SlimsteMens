@@ -18,11 +18,13 @@ var tn3;
 var subansweridx;
 var nextQuestionAllowed;
 var triggerForNieuweRonde;
+var displaystyle;
 
 function load_current(){
 	document.getElementById("wrapper1").style.display = 'block';
 	document.getElementById("wrapper2").style.display = 'none';
 	document.getElementById("admintools").style.display = 'none'
+	document.getElementById("wrapper3").style.display = 'none';
 	tn1 = "1";
 	tn2 = "2";
 	tn3 = "3";
@@ -38,6 +40,7 @@ function start(){
 	document.getElementById("transparantimaget1").style.display = 'block';
 	document.getElementById("transparantimaget2").style.display = 'none';
 	document.getElementById("transparantimaget3").style.display = 'none';
+	document.getElementById("wrapper3").style.display = 'flex';
 	rondes = [];
 	rondes[0] = "3 - 6 - 9"
 	rondes[1] = "Wat weet je over?";
@@ -52,11 +55,11 @@ function start(){
 	vragen[0][2] = "3. Waarvoor staat www?";
 	vragen[0][3] = "4. Wat hebben Donut, Gingerbread, Jelly Bean, KitKat, Lollipop en Nougat met elkaar gemeen?";
 	vragen[0][4] = "5. Hoe noemen we computers die met elkaar verbonden (evt. draadloos) zijn om te communiceren?";
-	vragen[0][5] = "6. Welk alledaags gebruiksvoorwerp (meestal in een auto) maakt gebruik van grafen?";
+	vragen[0][5] = "6. Welk van de volgende bestanden is een videobestand? appel.wav, banaan.ppt, druiven.mkv, ananas.png"
 	vragen[0][6] = "7. Welk beroep zal je wellicht niet uitoefenen met je diploma TI? Webontwikkelaar, Verpleger, Netwerkbeheerder, Lesgever, Ondernemer,";
 	vragen[0][7] = "8. Hoe maakt men cyber-brood?";
 	vragen[0][8] = "9. Waarvan is dit het logo? <img src='images/Tux.png' height=50 title='logo'/>";
-	vragen[0][9] = "10. Welke eindbegroeting gebruik je ook als TI-nerd in je email?";
+	vragen[0][9] = "10. In welk jaar werd Facebook geïntroduceerd?";
 	vragen[0][10] = "11. Geen melk meer in de frigo? Automatisch nieuwe melk bestelling, dankzij?";
 	vragen[0][11] = "12. Hoe heet de programmeertaal die aan koffie doet denken?";
 	vragen[1][0] = "<img src='images/algoritme1.PNG' height=150 title='code'/>";
@@ -74,11 +77,11 @@ function start(){
 	antwoorden [0][2] = "World Wide Web";
 	antwoorden [0][3] = "Android besturingssystemen";
 	antwoorden [0][4] = "Netwerk";
-	antwoorden [0][5] = "een GPS";
+	antwoorden [0][5] = "druiven.mkv";
 	antwoorden [0][6] = "Verpleger";
 	antwoorden [0][7] = "met e-meel";
 	antwoorden [0][8] = "Linux";
-	antwoorden [0][9] = "Met vriendelijke groeten";
+	antwoorden [0][9] = "2004";
 	antwoorden [0][10] = "Internet of Things";
 	antwoorden [0][11] = "JAVA";
 	antwoorden [1][0] = "algoritme;pythagoras;javascript;5";
@@ -358,6 +361,9 @@ function updateScore(){
 	}else{
 		currentscore = parseInt(score);
 		volgendevraag = true;
+	}
+	if(isNaN(currentscore)){
+		return volgendevraag;
 	}
 	if(currentteam == 1){
 		score1 += currentscore;

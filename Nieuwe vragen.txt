@@ -1,0 +1,14 @@
+Welk van de volgende bestanden is een videobestand?
+  * appel.tiff
+  * banaan.pptx
+  * druiven.mkv
+  * ananas.png
+
+In welk jaar werd Facebook gelanceerd?
+  * 2002
+  * 2004
+  * 2006
+  * 2008
+
+Wat voor iets is "192.168.147.1"?
+  IP-address
