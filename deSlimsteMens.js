@@ -212,6 +212,22 @@ function juist() {
 	}
 }
 
+//verander het team en zet nrOfteamscurrentQuestion op default
+function changeTeam(team){
+	currentTeamID = ("team" + currentteam.toString());
+	transparentCurrentTeamID = "transparantimaget" + currentteam.toString();
+	setTeamID = "team" + team.toString();
+	transparentSetTeamID = "transparantimaget" + team.toString();
+	document.getElementById(currentTeamID).classList.remove('current');
+	document.getElementById(currentTeamID).classList.add('notcurrent');
+	document.getElementById(setTeamID).classList.remove('notcurrent');
+	document.getElementById(setTeamID).classList.add('current');
+	document.getElementById(transparentCurrentTeamID).style.display = 'none';
+	document.getElementById(transparentSetTeamID).style.display = 'block';
+	currentteam = team;
+	nrOfteamscurrentQuestion = 1;
+}
+
 function showantwoord(){
 	document.getElementById("antwoordsuggestie").innerHTML = clearAntwoord(antwoorden[rondeidx][vraagidx]);
 	var clock = document.getElementById('headercounter');
@@ -382,7 +398,7 @@ function updateScore(){
 }
 
 function nextQuestion(){
-	nrOfteamscurrentQuestion = 1
+	nrOfteamscurrentQuestion = 1;
 	document.getElementById("q"+(vraagidx+1)).classList.remove('currentquestion');
 	if(vraagidx < vragen[rondeidx].length-1){
 		vraagidx ++;
@@ -393,6 +409,9 @@ function nextQuestion(){
 		subansweridx = 0;
 		if(rondeidx != rondes.length-1) alert("Leg de volgende ronde uit. Klik op OK om de ronde te starten");
 		nieuweronde();
+	}
+	if(rondeidx >= 1){
+		changeTeam(vraagidx + 1);
 	}
 	document.getElementById("vraag").innerHTML = vragen[rondeidx][vraagidx];
 	document.getElementById("antwoordsuggestie").innerHTML = blurAntwoord(antwoorden[rondeidx][vraagidx]);
@@ -502,6 +521,9 @@ function manualVolgendeRonde(){
 		document.getElementById("vraag").innerHTML = vragen[rondeidx][vraagidx];
 		document.getElementById("antwoordsuggestie").innerHTML = blurAntwoord(antwoorden[rondeidx][vraagidx]);
 		document.getElementById("q"+(vraagidx+1)).classList.add('currentquestion');
+		if(rondeidx >= 1){
+			changeTeam(vraagidx + 1);
+		}
 		initializeClock();
 	}
 }
