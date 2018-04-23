@@ -33,11 +33,11 @@ De volgende vraag duidt dan het correcte team aan voor de volgende vraag (afhank
 TODO:
 
 - Tussenpagina tussen de rondes
-- NaN error fixen
 - button om terug te gaan naar vorige vraag
 
 DONE:
 
+- NaN error fixen
 - Score manueel aanpassen (timer moet pauzeren)
 - audio switch teams
 - button om naar volgende vraag te gaan
