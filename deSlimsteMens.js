@@ -157,6 +157,7 @@ function initializeClock() {
 	var secondsSpan = clock.querySelector('.seconds');
 
 	var t = 1000*seconden[rondeidx][vraagidx];
+	if (isNaN(t)) return;
 	if(t <= 0){
 		secondsSpan.innerHTML = "";
 		clearInterval(timeinterval);
@@ -224,6 +225,8 @@ function showantwoord(){
 			secondsSpan.innerHTML = "0";
 			enableButton("volgendevraagbutton");
 			checkNextQuestion();
+		} else if (isNaN(t)) {
+			secondsSpan.innerHTML = "0";
 		} else {
 			secondsSpan.innerHTML = t/1000;
 		}
