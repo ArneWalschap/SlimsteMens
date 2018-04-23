@@ -223,7 +223,6 @@ function changeTeam(team){
 	transparentCurrentTeamID = "transparantimaget" + currentteamstring;
 	setTeamID = "team" + team.toString();
 	transparentSetTeamID = "transparantimaget" + team.toString();
-	alert(currentTeamID);
 	document.getElementById(currentTeamID).classList.remove('current');
 	document.getElementById(currentTeamID).classList.add('notcurrent');
 	document.getElementById(setTeamID).classList.remove('notcurrent');
